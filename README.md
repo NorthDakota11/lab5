@@ -1,22 +1,32 @@
 # lab05
 
-Laboratory work V: unit testing with GoogleTest.
+Лабораторная работа №5 посвящена модульному тестированию C++-проекта с использованием GoogleTest.
 
-The task is based on `tp-labs/lab05`: copy the lab04 CMake project, add GoogleTest, create a unit test, build with `BUILD_TESTS`, and run tests through CMake.
+Проект основан на предыдущей лабораторной работе: используется библиотека `print`, CMake-сборка и тестовый файл.
 
-## Files
+## Состав проекта
 
-- `include/print.hpp` - public header.
-- `sources/print.cpp` - library implementation.
-- `tests/test1.cpp` - GoogleTest test.
-- `CMakeLists.txt` - base CMake build.
-- `.travis.yml` - Travis CI placeholder.
+- `CMakeLists.txt` — CMake-файл сборки.
+- `include/print.hpp` — заголовочный файл библиотеки.
+- `sources/print.cpp` — реализация библиотеки.
+- `tests/test1.cpp` — модульный тест.
+- `third-party/gtest/include/gtest/gtest.h` — минимальный совместимый заголовок для проверки теста.
+- `.travis.yml` — конфигурация Travis CI.
+- `REPORT.md` — отчет по лабораторной работе.
 
-## Basic build
+## Сборка проекта
 
 ```sh
-cmake -S . -B _build
+cmake -S . -B _build -DBUILD_TESTS=ON
 cmake --build _build
 ```
 
-Full GoogleTest and Travis snippets are stored in `docs/gtest-cmake.md` and `docs/travis.md`.
+## Запуск тестов
+
+```sh
+cmake --build _build --target test
+```
+
+## Ссылка на репозиторий
+
+https://github.com/NorthDakota11/lab5
