@@ -7,8 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(BUILD_TESTS "Build tests" ON)
 
 add_library(banking STATIC
-  banking/account.cpp
-  banking/transaction.cpp
+  banking/Account.cpp
+  banking/Transaction.cpp
 )
 
 target_include_directories(banking PUBLIC banking)
